@@ -39,16 +39,16 @@ describe windows_feature('IIS-Webserver') do
 end
 
 # Does our website container exist with the right app pool?  Is it running?
-describe iis_website('carmax_serverspec') do
+describe iis_website('test_serverspec') do
   it { should exist }
   it { should be_enabled }
   it { should be_running }
-  it { should be_in_app_pool 'carmax_serverspec' }
-  it { should have_physical_path 'c:\\carmax_serverspec' }
+  it { should be_in_app_pool 'test_serverspec' }
+  it { should have_physical_path 'c:\\test_serverspec' }
 end
 
 # Verify App Pool exists with correct .NET version
-describe iis_app_pool('carmax_serverspec') do
+describe iis_app_pool('test_serverspec') do
   it { should exist }
   it { should have_dotnet_version('4.0') }
 end
