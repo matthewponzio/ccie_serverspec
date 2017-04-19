@@ -1,3 +1,4 @@
 require 'serverspec'
 
-set :backend, :cmd
+set :backend, :exec
+
